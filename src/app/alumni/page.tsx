@@ -36,8 +36,13 @@ export default function AlumniPage() {
     getAlumni();
   }, []);
 
-  // Get unique batches for filter
-  const batches = [...new Set(alumni.map(a => a.batch))].sort((a, b) => parseInt(b) - parseInt(a));
+  // Get unique batches for filter without using Set spread
+  const batches = Array.from(
+    alumni.reduce((acc, alumnus) => {
+      acc.add(alumnus.batch);
+      return acc;
+    }, new Set<string>())
+  ).sort((a, b) => parseInt(b) - parseInt(a));
 
   // Filter alumni based on selected batch
   const filteredAlumni = filter === 'all' 
