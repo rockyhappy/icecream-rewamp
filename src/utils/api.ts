@@ -27,7 +27,13 @@ export interface TeamMember {
   socialLinks: {
     linkedin: string;
     github: string;
-    [key: string]: string;
+    twitter?: string;
+    behance?: string;
+    medium?: string;
+    kaggle?: string;
+    codepen?: string;
+    instagram?: string;
+    [key: string]: string | undefined;
   };
 }
 
