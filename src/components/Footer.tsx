@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="container">
         <div className="row py-4">
           <div className="col-md-4 mb-4">
-            <h5 className="text-white">SOFTWARE INCUBATOR</h5>
+            <h5 className="text-white">PROGRAMMING CLUB</h5>
             <p className="text-white-50">
-              Software Incubator is the technical society of ABES Engineering College. We aim to enhance the technical skills of our members and provide them with a platform to showcase their talents.
+              Programming Club is the technical society of ABES Engineering College. We aim to enhance the technical skills of our members and provide them with a platform to showcase their talents.
             </p>
           </div>
           <div className="col-md-4 mb-4">
@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="col-md-4 mb-4">
             <h5 className="text-white">CONTACT US</h5>
             <p className="text-white-50">
-              Software Incubator<br />
+              Programming Club<br />
               ABES Engineering College<br />
               Campus - 1, 19th KM Stone, NH-24<br />
               Ghaziabad, Uttar Pradesh 201009
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-copyright text-center py-3 text-white-50">
-        © {new Date().getFullYear()} Software Incubator. All Rights Reserved.
+        © {new Date().getFullYear()} Programming Club. All Rights Reserved.
       </div>
     </footer>
   );

@@ -31,12 +31,72 @@ header {
   z-index: 10002 !important;
 }
 
+/* Modified navigation menu - box shape instead of circle */
 .sub-menu {
   z-index: 10003 !important;
+  border-radius: 0 !important; /* Remove circular shape */
+  background-color: rgba(31, 31, 31, 0.9) !important; /* Darker background */
+  padding-left: 40px !important; /* Add padding to the entire menu */
+  box-sizing: border-box !important;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease !important;
 }
 
+/* Add padding to navigation items */
+.sub-menu li {
+  padding-left: 40px !important; /* Increase left padding */
+  margin-left: 100px !important; /* Adjust position */
+  width: 250px !important; /* Make items wider */
+  box-sizing: border-box !important;
+  text-align: left !important;
+  margin-bottom: 15px !important; /* Add space between items */
+}
+
+/* Style for navigation links */
+.sub-menu li a {
+  padding: 8px 0 !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.sub-menu li a:hover {
+  color: #EF334C !important;
+  padding-left: 5px !important;
+}
+
+/* Register link styling */
+.sub-menu li:last-child a {
+  color: #EF334C !important;
+  font-weight: bold !important;
+}
+
+/* Adjust the opened menu shape */
+.oppenned span:nth-child(2) {
+  border-radius: 0 !important; /* Make it square instead of circle */
+  background-color: rgba(239, 51, 76, 0.9) !important; /* Darker red background */
+  height: 600px !important; /* Increased height */
+  width: 400px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Adjust the opened submenu */
+.oppenned .sub-menu {
+  height: 600px !important; /* Increased height */
+  width: 400px !important;
+  transform: scale(1);
+}
+
+/* Adjust first item position */
+.sub-menu li:first-child {
+  margin-top: 150px !important; /* Reduced to fit more items */
+}
+
+/* Remove register button */
 .register_button {
-  z-index: 10002 !important;
+  display: none !important;
 }
 
 /* Fix for main content */
@@ -56,5 +116,5 @@ section {
 .page-footer {
   position: relative;
   z-index: 1;
-  background-color: #1672cc;
+  background-color: #EF334C;
 } 

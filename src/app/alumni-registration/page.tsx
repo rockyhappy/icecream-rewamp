@@ -69,7 +69,7 @@ export default function AlumniRegistration() {
     <main>
       {/* Loader */}
       <div id="loader">
-        <img className="loader-img" src="/images/loader.svg" alt="Loading..." />
+        <img className="loader-img" src="/images/logo.png" alt="Loading..." />
       </div>
 
       {/* Header */}

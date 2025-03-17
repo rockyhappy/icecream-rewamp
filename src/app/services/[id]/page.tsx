@@ -80,7 +80,7 @@ export default function ServiceDetailPage() {
       <Header />
 
       {/* Service Header */}
-      <section className="py-5 service-header" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 service-header" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-8">
@@ -123,7 +123,7 @@ export default function ServiceDetailPage() {
                 <div className="card-body">
                   <h2>Our Approach</h2>
                   <p>
-                    At Software Incubator, we follow a systematic approach to deliver high-quality {service.title.toLowerCase()} solutions. Our process involves understanding your requirements, designing a solution that meets your needs, implementing the solution using the latest technologies, and providing ongoing support and maintenance.
+                    At Programming Club, we follow a systematic approach to deliver high-quality {service.title.toLowerCase()} solutions. Our process involves understanding your requirements, designing a solution that meets your needs, implementing the solution using the latest technologies, and providing ongoing support and maintenance.
                   </p>
                   <p>
                     We believe in collaboration and transparency throughout the development process. Our team works closely with you to ensure that the final product exceeds your expectations and delivers value to your business.

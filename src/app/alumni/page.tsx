@@ -55,12 +55,12 @@ export default function AlumniPage() {
       <Header />
 
       {/* Alumni Header */}
-      <section className="py-5 alumni-header" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 alumni-header" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
               <h1>OUR ALUMNI</h1>
-              <p className="lead">Meet the successful graduates of Software Incubator</p>
+              <p className="lead">Meet the successful graduates of Programming Club</p>
             </div>
           </div>
         </div>
@@ -128,13 +128,13 @@ export default function AlumniPage() {
       </section>
 
       {/* Join Alumni Network */}
-      <section className="py-5 join-alumni" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 join-alumni" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-8">
               <h2>Join Our Alumni Network</h2>
               <p className="lead">
-                Are you a former member of Software Incubator? Join our alumni network to stay connected and contribute to our community.
+                Are you a former member of Programming Club? Join our alumni network to stay connected and contribute to our community.
               </p>
             </div>
             <div className="col-md-4 text-center">

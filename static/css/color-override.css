@@ -1,0 +1,383 @@
+/* Global Color Override - Replace all blue theme colors with red (#EF334C) */
+
+/* Primary color replacements */
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary,
+.btn-outline-primary:hover,
+.list-group-item.active,
+.page-item.active .page-link,
+.progress-bar,
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+/* Text color replacements */
+.text-primary,
+.btn-link,
+.dropdown-item.active,
+.dropdown-item:active,
+.nav-link.active,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link,
+a:not(.btn):not(.badge):not(.card-link):not(.dropdown-item):not(.nav-link):not(.page-link):not(.navbar-brand),
+.btn-outline-primary,
+.page-link,
+.list-group-item-action:hover,
+.list-group-item-action:focus {
+  color: #EF334C !important;
+}
+
+/* Border color replacements */
+.border-primary,
+.btn-outline-primary,
+.page-link,
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:focus ~ .custom-control-label::before,
+.form-control:focus,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+  border-color: #EF334C !important;
+  box-shadow: 0 0 0 0.2rem rgba(239, 51, 76, 0.25) !important;
+}
+
+/* Hover states */
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #d42a3f !important;
+  border-color: #c8293c !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #d42a3f !important;
+}
+
+/* Background colors with transparency */
+.bg-primary-light {
+  background-color: rgba(239, 51, 76, 0.1) !important;
+}
+
+.bg-primary-lighter {
+  background-color: rgba(239, 51, 76, 0.05) !important;
+}
+
+/* Specific Bootstrap components */
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #EF334C !important;
+}
+
+/* Card headers */
+.card-header {
+  background-color: rgba(239, 51, 76, 0.1) !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #333 !important;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
+.h1 span, .h2 span, .h3 span, .h4 span, .h5 span, .h6 span {
+  color: #EF334C !important;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #d42a3f !important;
+  border-color: #c8293c !important;
+}
+
+.btn-outline-primary {
+  color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #EF334C !important;
+  color: #fff !important;
+}
+
+/* Links */
+a {
+  color: #EF334C !important;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #d42a3f !important;
+  text-decoration: none;
+}
+
+/* Navigation */
+.navbar-dark {
+  background-color: #EF334C !important;
+}
+
+/* Footer */
+.footer,
+.page-footer {
+  background-color: #EF334C !important;
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: #EF334C !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+  color: #fff !important;
+}
+
+/* Form controls */
+.form-control:focus {
+  border-color: #EF334C !important;
+  box-shadow: 0 0 0 0.2rem rgba(239, 51, 76, 0.25) !important;
+}
+
+/* Custom checkboxes and radios */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: #EF334C !important;
+}
+
+/* Badges */
+.badge-primary {
+  background-color: #EF334C !important;
+}
+
+/* Alerts */
+.alert-primary {
+  background-color: rgba(239, 51, 76, 0.1) !important;
+  border-color: rgba(239, 51, 76, 0.2) !important;
+  color: #d42a3f !important;
+}
+
+/* List groups */
+.list-group-item.active {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+/* Dropdown menus */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #EF334C !important;
+  color: #fff !important;
+}
+
+/* Tabs and pills */
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #EF334C !important;
+  border-color: #dee2e6 #dee2e6 #fff !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #EF334C !important;
+  color: #fff !important;
+}
+
+/* Specific overrides for any remaining blue elements */
+[style*="color: #1672cc"],
+[style*="color:#1672cc"],
+[style*="color: rgb(22, 114, 204)"],
+[style*="color:rgb(22, 114, 204)"] {
+  color: #EF334C !important;
+}
+
+[style*="background-color: #1672cc"],
+[style*="background-color:#1672cc"],
+[style*="background-color: rgb(22, 114, 204)"],
+[style*="background-color:rgb(22, 114, 204)"] {
+  background-color: #EF334C !important;
+}
+
+[style*="border-color: #1672cc"],
+[style*="border-color:#1672cc"],
+[style*="border-color: rgb(22, 114, 204)"],
+[style*="border-color:rgb(22, 114, 204)"] {
+  border-color: #EF334C !important;
+}
+
+/* Any other blue shades that might be used */
+[style*="color: #0d5ca9"],
+[style*="color:#0d5ca9"] {
+  color: #d42a3f !important;
+}
+
+[style*="background-color: #0d5ca9"],
+[style*="background-color:#0d5ca9"] {
+  background-color: #d42a3f !important;
+}
+
+/* Override for any inline styles with !important */
+[style*="color: #1672cc !important"],
+[style*="color:#1672cc !important"] {
+  color: #EF334C !important;
+}
+
+[style*="background-color: #1672cc !important"],
+[style*="background-color:#1672cc !important"] {
+  background-color: #EF334C !important;
+}
+
+/* Override for any other blue colors that might be used */
+.text-blue, .text-info {
+  color: #EF334C !important;
+}
+
+.bg-blue, .bg-info {
+  background-color: #EF334C !important;
+}
+
+.border-blue, .border-info {
+  border-color: #EF334C !important;
+}
+
+/* SI-specific elements */
+.si-color {
+  color: #EF334C !important;
+}
+
+.si-bg {
+  background-color: #EF334C !important;
+}
+
+.si-border {
+  border-color: #EF334C !important;
+}
+
+/* Override for specific elements that might still have blue colors */
+.header-btn,
+.apply-btn,
+.read-more-btn,
+.submit-btn {
+  background-color: #EF334C !important;
+  border-color: #EF334C !important;
+}
+
+.header-btn:hover,
+.apply-btn:hover,
+.read-more-btn:hover,
+.submit-btn:hover {
+  background-color: #d42a3f !important;
+  border-color: #c8293c !important;
+}
+
+/* Override for specific sections */
+#about,
+#services,
+#team,
+#contact {
+  color: #333 !important;
+}
+
+#about h2,
+#services h2,
+#team h2,
+#contact h2 {
+  color: #333 !important;
+}
+
+#about h2 span,
+#services h2 span,
+#team h2 span,
+#contact h2 span {
+  color: #EF334C !important;
+}
+
+/* Override for any remaining blue elements */
+.blue-text,
+.blue-color,
+.blue {
+  color: #EF334C !important;
+}
+
+.blue-bg,
+.blue-background {
+  background-color: #EF334C !important;
+}
+
+.blue-border {
+  border-color: #EF334C !important;
+}
+
+/* Override for specific classes that might be used in the templates */
+.primary-color {
+  color: #EF334C !important;
+}
+
+.primary-bg {
+  background-color: #EF334C !important;
+}
+
+.primary-border {
+  border-color: #EF334C !important;
+}
+
+/* Override for any SVG elements */
+svg path[fill="#1672cc"],
+svg rect[fill="#1672cc"],
+svg circle[fill="#1672cc"] {
+  fill: #EF334C !important;
+}
+
+svg path[stroke="#1672cc"],
+svg rect[stroke="#1672cc"],
+svg circle[stroke="#1672cc"] {
+  stroke: #EF334C !important;
+}
+
+/* Override for any remaining elements with blue color */
+*[class*="blue"] {
+  color: #EF334C !important;
+}
+
+*[class*="blue-bg"] {
+  background-color: #EF334C !important;
+}
+
+*[class*="blue-border"] {
+  border-color: #EF334C !important;
+} 

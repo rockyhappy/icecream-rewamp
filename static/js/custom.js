@@ -1,36 +1,36 @@
-// Hide loader immediately when the page loads
+// Apply navigation styles and color overrides
 document.addEventListener('DOMContentLoaded', function() {
-  const loader = document.getElementById('loader');
-  if (loader) {
-    loader.style.display = 'none';
+  // Inject color override CSS if not already present
+  if (!document.querySelector('link[href="/css/color-override.css"]')) {
+    const colorOverrideLink = document.createElement('link');
+    colorOverrideLink.rel = 'stylesheet';
+    colorOverrideLink.href = '/css/color-override.css';
+    document.head.appendChild(colorOverrideLink);
   }
-});
-
-// Ensure all navigation elements are visible and replace blue colors with red
-document.addEventListener('DOMContentLoaded', function() {
-  // Fix z-index issues
-  const header = document.querySelector('header');
-  if (header) {
-    header.style.zIndex = '10001';
-    header.style.position = 'relative';
+  
+  // Update theme color meta tag if present
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute('content', '#EF334C');
+  } else {
+    const newThemeColorMeta = document.createElement('meta');
+    newThemeColorMeta.name = 'theme-color';
+    newThemeColorMeta.content = '#EF334C';
+    document.head.appendChild(newThemeColorMeta);
   }
-
-  const menu = document.querySelector('.open');
-  if (menu) {
-    menu.style.zIndex = '10002';
-  }
-
+  
   // Hide register button
   const registerButton = document.querySelector('.register_button');
   if (registerButton) {
     registerButton.style.display = 'none';
   }
-
+  
+  // Fix navigation menu
   const subMenu = document.querySelector('.sub-menu');
   if (subMenu) {
-    subMenu.style.zIndex = '10003';
-    subMenu.style.borderRadius = '0'; // Make it box-shaped
-    subMenu.style.paddingLeft = '40px'; // Add padding to the entire menu
+    subMenu.style.borderRadius = '0';
+    subMenu.style.backgroundColor = 'rgba(31, 31, 31, 0.9)';
+    subMenu.style.paddingLeft = '40px';
     subMenu.style.transform = 'scale(0)';
     subMenu.style.transformOrigin = 'top left';
     subMenu.style.transition = 'transform 0.3s ease';
@@ -108,19 +108,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Apply styles to submenu items
+  // Fix navigation items
   const subMenuItems = document.querySelectorAll('.sub-menu li');
   if (subMenuItems.length > 0) {
     subMenuItems.forEach((item, index) => {
-      item.style.paddingLeft = '40px'; // Increase left padding
-      item.style.marginLeft = '100px'; // Adjust position
-      item.style.width = '250px'; // Make items wider
-      item.style.textAlign = 'left'; // Ensure text is left-aligned
-      item.style.marginBottom = '15px'; // Add space between items
+      item.style.paddingLeft = '40px';
+      item.style.marginLeft = '100px';
+      item.style.width = '250px';
+      item.style.textAlign = 'left';
+      item.style.marginBottom = '15px'; // Increased spacing
       
       // Adjust first item position
       if (index === 0) {
-        item.style.marginTop = '150px'; // Reduced to fit more items
+        item.style.marginTop = '150px';
       }
       
       // Style the link inside the list item
@@ -148,8 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         const expandedMenu = document.querySelector('.open span:nth-child(2)');
         if (expandedMenu) {
-          expandedMenu.style.borderRadius = '0'; // Make it box-shaped
-          expandedMenu.style.backgroundColor = 'rgba(239, 51, 76, 0.9)'; // Darker red background
+          expandedMenu.style.borderRadius = '0';
+          expandedMenu.style.backgroundColor = 'rgba(239, 51, 76, 0.9)';
           expandedMenu.style.height = '600px'; // Increased height
           expandedMenu.style.width = '400px';
           expandedMenu.style.transition = 'all 0.3s ease';
@@ -163,13 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }, 100);
     });
-  }
-
-  // Ensure main content is visible
-  const main = document.querySelector('main');
-  if (main) {
-    main.style.position = 'relative';
-    main.style.zIndex = '1';
   }
   
   // Replace any remaining blue colors with red

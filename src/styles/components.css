@@ -29,7 +29,7 @@
 }
 
 .team-member-position {
-  color: #1672cc;
+  color: #EF334C;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -66,14 +66,14 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #1672cc;
+  background-color: #EF334C;
   color: white;
   margin-right: 10px;
   transition: background-color 0.3s ease;
 }
 
 .social-link:hover {
-  background-color: #0d5ca9;
+  background-color: #d42a3f;
 }
 
 /* Alumni Card */
@@ -113,7 +113,7 @@
 }
 
 .alumni-position {
-  color: #1672cc;
+  color: #EF334C;
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -131,7 +131,7 @@
 }
 
 .alumni-batch {
-  background-color: #1672cc;
+  background-color: #EF334C;
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
@@ -171,7 +171,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #1672cc;
+  color: #EF334C;
 }
 
 .service-description {
@@ -190,14 +190,14 @@
 }
 
 .feature-icon {
-  color: #1672cc;
+  color: #EF334C;
   margin-right: 10px;
   margin-top: 5px;
 }
 
 .technology-tag {
-  background-color: #e9f0f8;
-  color: #1672cc;
+  background-color: #fde8eb;
+  color: #EF334C;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -233,7 +233,7 @@
   display: block;
   width: 80px;
   height: 4px;
-  background-color: #1672cc;
+  background-color: #EF334C;
   margin: 15px auto 0;
 }
 
@@ -248,7 +248,7 @@
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top: 4px solid #1672cc;
+  border-top: 4px solid #EF334C;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
@@ -320,8 +320,8 @@
 }
 
 .tag {
-  background-color: #e9f0f8;
-  color: #1672cc;
+  background-color: #fde8eb;
+  color: #EF334C;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -370,4 +370,69 @@
   .blog-post-title {
     font-size: 1.2rem;
   }
+}
+
+/* Navigation Menu Customization */
+.open span:nth-child(2) {
+  border-radius: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.sub-menu {
+  border-radius: 0 !important;
+  background-color: rgba(31, 31, 31, 0.9) !important;
+  padding-left: 40px !important;
+  box-sizing: border-box !important;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease !important;
+}
+
+.oppenned .sub-menu {
+  height: 600px !important;
+  width: 400px !important;
+  border-radius: 0 !important;
+  transform: scale(1);
+}
+
+.sub-menu li {
+  padding-left: 40px !important;
+  margin-left: 100px !important;
+  width: 250px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+  margin-bottom: 15px !important;
+}
+
+.sub-menu li:first-child {
+  margin-top: 150px !important;
+}
+
+.sub-menu li a {
+  padding: 8px 0 !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.sub-menu li a:hover {
+  color: #EF334C !important;
+  padding-left: 5px !important;
+}
+
+.sub-menu li:last-child a {
+  color: #EF334C !important;
+  font-weight: bold !important;
+}
+
+.oppenned span:nth-child(2) {
+  height: 600px !important;
+  width: 400px !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.register_button {
+  display: none !important;
 } 

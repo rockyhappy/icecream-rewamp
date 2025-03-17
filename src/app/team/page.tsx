@@ -40,12 +40,12 @@ export default function Team() {
       <Header />
 
       {/* Team Header */}
-      <section className="py-5 team-header" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 team-header" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
               <h1>OUR TEAM</h1>
-              <p className="lead">Meet the talented individuals behind Software Incubator</p>
+              <p className="lead">Meet the talented individuals behind Programming Club</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function Team() {
         <div className="container">
           <div className="section-title">
             <h2>Leadership Team</h2>
-            <p>Our leadership team guides the vision and direction of Software Incubator</p>
+            <p>Our leadership team guides the vision and direction of Programming Club</p>
           </div>
 
           {loading ? (
@@ -102,13 +102,13 @@ export default function Team() {
       </section>
 
       {/* Join Our Team */}
-      <section className="py-5 join-team" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 join-team" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-8">
               <h2>Join Our Team</h2>
               <p className="lead">
-                Are you passionate about technology and innovation? Join Software Incubator and be part of our journey to create amazing solutions.
+                Are you passionate about technology and innovation? Join Programming Club and be part of our journey to create amazing solutions.
               </p>
             </div>
             <div className="col-md-4 text-center">

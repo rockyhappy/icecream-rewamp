@@ -40,7 +40,7 @@ export default function ServicesPage() {
       <Header />
 
       {/* Services Header */}
-      <section className="py-5 services-header" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 services-header" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
@@ -58,7 +58,7 @@ export default function ServicesPage() {
             <div className="col-md-6">
               <h2>Innovative Solutions for Modern Challenges</h2>
               <p>
-                At Software Incubator, we offer a comprehensive range of technical services to help businesses and organizations leverage technology for growth and innovation. Our team of skilled developers, designers, and engineers work collaboratively to deliver high-quality solutions tailored to your specific needs.
+                At Programming Club, we offer a comprehensive range of technical services to help businesses and organizations leverage technology for growth and innovation. Our team of skilled developers, designers, and engineers work collaboratively to deliver high-quality solutions tailored to your specific needs.
               </p>
               <p>
                 Whether you need a responsive website, a mobile application, or a complex machine learning solution, we have the expertise to bring your vision to life. We follow industry best practices and use the latest technologies to ensure that our solutions are robust, scalable, and future-proof.
@@ -105,7 +105,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="section-title">
             <h2>Why Choose Us</h2>
-            <p>What sets Software Incubator apart from others</p>
+            <p>What sets Programming Club apart from others</p>
           </div>
 
           <div className="row">
@@ -147,7 +147,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Contact Us */}
-      <section className="py-5 contact-cta" style={{ background: 'linear-gradient(to right, #1672cc, #0d5ca9)', color: 'white' }}>
+      <section className="py-5 contact-cta" style={{ background: 'linear-gradient(to right, #EF334C, #ffffff)', color: 'white' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-8">

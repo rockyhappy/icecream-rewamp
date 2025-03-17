@@ -37,7 +37,7 @@ export default function Home() {
     <main>
       {/* Loader */}
       <div id="loader">
-        <img className="loader-img" src="/images/loader.svg" alt="Loading..." />
+        <img className="loader-img" src="/images/logo.png" alt="Loading..." />
       </div>
 
       {/* Header */}
@@ -49,7 +49,7 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <img src="/images/silogo.svg" alt="SI Logo" className="logo-image" />
+                <img src="/images/logo.png" alt="Programming Club Logo" className="logo-image" />
                 <h2 className="believe">WE BELIEVE IN INNOVATION</h2>
                 <div className="type-wrap">
                   <span id="typed" className="matter"></span>

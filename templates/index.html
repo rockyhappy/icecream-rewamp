@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SOFTWARE INCUBATOR</title>
-    <link rel="icon" href="{% static 'images/silogo.ico' %}">
+    <title>PROGRAMMING CLUB</title>
+    <link rel="icon" href="%PUBLIC_URL%/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1672cc" />  
+    <meta name="theme-color" content="#EF334C" />  
     <!-- Google FOnt -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700"
         rel="stylesheet"> -->
@@ -42,7 +42,7 @@
 
     <!-- ================================================================================================== Loader -->
         
-        <div id="loader"><img class="loader-img" src="{% static 'images/loader.svg' %}"></div>
+        <div id="loader"><img class="loader-img" src="{% static 'images/logo.png' %}"></div>
         
         
         <!-- ================================================================================================== Wrapper -->
@@ -131,19 +131,14 @@
                 
                 <section class="elements">
                     <div class="content-si">
-                        <div class="container">
-                            <div id="scene" class="row justify-content-center">  
-                                <div class="scroll text-center">
-                                    <img style="width:40%" class="logo-image" src="{% static 'images/silogo.svg' %}" alt="si_logo">
-                                    <h1 style="color:#0094ff" >Software</h1><h1 style="color:#000;" class="redlit2">Incubator</h1>
-                                </div>     
-                                
-                                <!-- <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
-                                    <img class="logo-image" src="{% static 'images/silogo.svg' %}" alt="si_logo">
+                        <div class="custom-container">
+                            <div class="content-text">
+                                <img style="width:40%" class="logo-image" src="{% static 'images/logo.png' %}" alt="Programming Club Logo">
+                                <h2 class="believe">REDEFINING LIMITATIONS</h2>
+                                <div class="type-wrap">
+                                    <span id="typed" class="matter"></span>
                                 </div>
-                                <div class="redlit wow fadeIn mx-auto col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">
-                                    
-                                </div> -->
+                                <img class="logo-image" src="{% static 'images/logo.png' %}" alt="Programming Club Logo">
                             </div>
                         </div>
                     </div>
@@ -210,7 +205,7 @@
                                             </div>
                                             <div class="col-sm-12 col-md-6 col-lg-6 caption">
                                                 <h3>MOBILE APPLICATION DEVELOPMENT</h3>
-                                                <p class="justify-text">We realize that the world is changing its trends from typewriter to keyboard and now from click to touch. Hence, we here at Software Incubator develop mobile as well as tablet apps. The apps we make are for Android, iOS and Windows Devices. Today in the market and even tomorrow, our apps never die.</p>
+                                                <p class="justify-text">We realize that the world is changing its trends from typewriter to keyboard and now from click to touch. Hence, we here at Programming Club develop mobile as well as tablet apps. The apps we make are for Android, iOS and Windows Devices. Today in the market and even tomorrow, our apps never die.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -378,7 +373,7 @@
                                 <h1>About Us</h1>
                             </div>
                             <div class="scroll col-sm-12 col-md-6 col-lg-6">
-                                <p class="justify-text"><b>Software Incubator</b> is the research and development center established within the portal of Ajay Kumar Garg Engineering College. We have set a foothold in the areas of software development, web-based enterprise solutions, mobile development, web application, and website development. We focus on high integrity and commitment, quality and rigor at every stage of work, passion for excellence, focus on customer satisfaction. We are an equal opportunity organization that motivates every member to work with passion and commitment.</p>
+                                <p class="justify-text"><b>Programming Club</b> is the research and development center established within the portal of Ajay Kumar Garg Engineering College. We have set a foothold in the areas of software development, web-based technologies and research. We focus on high integrity and commitment, quality and rigor at every stage of work, passion for excellence, focus on customer satisfaction. We are an equal opportunity organization that motivates every member to work with passion and commitment.</p>
                                 <div class="row equation">
                                     <div class="col-sm-12">
                                         <div class="col-user-1by7 about-svg">
@@ -416,6 +411,16 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- >>>>>>> Team Members START <<<<<<<<< -->
+                
+                <section class="team">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12 my-4">
                         </section>
                         
                         <!-- >>>>>>> Team Members START <<<<<<<<< -->
@@ -473,7 +478,7 @@
                                         {% for alumnus in alumni %}  
                                         <div class="alumini_pics_container">  
                                             <a href="{% url 'alumni_detail' batch=alumnus.batch slug=alumnus.slug %}" target="_blank">
-                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCQ0BMzclNgCNAAADtElEQVQ4yy2UQa4cVRAEM7Pqdc/8sb8lkBAX4cyciwUbCwS2h5npfq8qWdh5gdhEJH//eXWwLF5HxFyv9VqzyNm3/HR9u9hzdYcUbhuEQXLO50zk50egTH0YKYAgxJSxRYZ9HNW2VL1qtb3n2MhuY9XZ+ef5zqGPMRSKgPcWZy0bgyIgAd2vOQsAxWxwzuecPjs/Sbrl+3bbxxCNiB21nvMs8jVDYoYBA43yLJ7d/533mv2oHLHrGnuOIXVJkEiMfsxXJVPB9ogta8HE2cdhP9a9Xk3k6h0GKQFAW3R3A2/Dnt1oh+3VbcC2y0lSTH51bji8VbWbpAijepV9GYDmYzW+jwC6GqsL3d3yO7J8+uZZ58wkjS6ANLojMrLKwVXHWjZePishBN7UXYjf2NjQJsSMCJKAbZIQ4dWi3Q2WZ99rZ7Dx7xJezqcv+HttVQ6OkEgoAHZXixk3dbdFgAgObnqsZx9eLkjYnBh81nPN6oIJAK6etSp1GVuGxNnLQeGoZw/u2GDoBWDin3rUq+ayQYo02oAkkeQ+LmOPXY1g8k1iYqKdVxyAn2jf1n6mhkPt7tSIjMgu0gZTxjmTZTOcJOj8SQDxERPl+8LrWiO7RWAf25WsRVZVzT6LOBuwdwllKW969kZyAjhajdUeoogcCreEMKKG2kPGdPvZRwc25h/rnUJ5MrUTOJsIhrdN4erutapr1vJqQqAPw9PgvfMDPvKvTiUSyY2pLS5j2xSKLnfbvXr1WaBIFk/TgafhpA8/sPtTjGjMBq4JdnevSUo2KYaGyiYhC8Tppz8jb2z8oktcUvxWwJVkdxEggyRpiKmSLBgGcPbmC26dUio0YlMjISxXMwmjWzREiAS2JFZFk0PVrypfmRFvQSVPi2T1fd1yJHDMs66IpPhdFwOkeIniotg+nJcYmSLcRriQMuaadT/LweubgrRZIEyywotGCI7KSwSHyNBRqZ3B5ftx1pclvpsElYBC1c0igNECUA5lcEhsBweR1WS1CRCDEqBwu2yblEAb2LKbnpVb7gm2gYyLV511dLfdXVw1T5LBoEkbIOw2GUI38zIMQAxRsPiqs2jgqkb1nNIIKgbD1T+SNcDMiCSPNYvYch9E+1nPflPw6BT5nffjxUTTMcKA3W3kt+MoYuhYInlWexPxWl/9a24ZinC73QBYyy2BILr7rBSTe0j2LHs1aXxZxKZgUAJ6VQGRMEACijVXzQJyz+AIYxYcbA1MbwALZTIGULNbItoEpOgCASD4Pxdy1py3lddMAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA5LTEzVDAxOjUxOjU1LTA0OjAws/fQ0wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wOS0xM1QwMTo1MTo1NS0wNDowMMKqaG8AAAAASUVORK5CYII=" data-toggle="tooltip" data-placement="top" title="{{ alumnus.name }} | {{ alumnus.batch }}" class="alumini_pics lazy" data-src="{{ alumnus.pic_path.url }}">
+                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiCQ0BMzclNgCNAAADtElEQVQ4yy2UQa4cVRAEM7Pqdc/8sb8lkBAX4cyciwUbCwS2h5npfq8qWdh5gdhEJH//eXWwLF5HxFyv9VqzyNm3/HR9u9hzdYcUbhuEQXLO50zk50egTH0YKYAgxJSxRYZ9HNW2VL1qtb3n2MhuY9XZ+ef5zqGPMRSKgPcWZy0bgyIgAd2vOQsAxWxwzuecPjs/Sbrl+3bbxxCNiB21nvMs8jVDYoYBA43yLJ7d/533mv2oHLHrGnuOIXVJkEiMfsxXJVPB9ogta8HE2cdhP9a9Xk3k6h0GKQFAW3R3A2/Dnt1oh+3VbcC2y0lSTH51bji8VbWbpAijepV9GYDmYzW+jwC6GqsL3d3yO7J8+uZZ58wkjS6ANLojMrLKwVXHWjZePishBN7UXYjf2NjQJsSMCJKAbZIQ4dWi3Q2WZ99rZ7Dx7xJezqcv+HttVQ6OkEgoAHZXixk3dbdFgAgObnqsZx9eLkjYnBh81nPN6oIJAK6etSp1GVuGxNnLQeGoZw/u2GDoBWDin3rUq+ayQYo02oAkkeQ+LmOPXY1g8k1iYqKdVxyAn2jf1n6mhkPt7tSIjMgu0gZTxjmTZTOcJOj8SQDxERPl+8LrWiO7RWAf25WsRVZVzT6LOBuwdwllKW969kZyAjhajdUeoogcCreEMKKG2kPGdPvZRwc25h/rnUJ5MrUTOJsIhrdN4erutapr1vJqQqAPw9PgvfMDPvKvTiUSyY2pLS5j2xSKLnfbvXr1WaBIFk/TgafhpA8/sPtTjGjMBq4JdnevSUo2KYaGyiYhC8Tppz8jb2z8oktcUvxWwJVkdxEggyRpiKmSLBgGcPbmC26dUio0YlMjISxXMwmjWzREiAS2JFZFk0PVrypfmRFvQSVPi2T1fd1yJHDMs66IpPhdFwOkeIniotg+nJcYmSLcRriQMuaadT/LweubgrRZIEyywotGCI7KSwSHyNBRqZ3B5ftx1pclvpsElYBC1c0igNECUA5lcEhsBweR1WS1CRCDEqBwu2yblEAb2LKbnpVb7gm2gYyLV511dLfdXVw1T5LBoEkbIOw2GUI38zIMQAxRsPiqs2jgqkb1nNIIKgbD1T+SNcDMiCSPNYvYch9E+1nPflPw6BT5nffjxUTTMcKA3W3kt+MoYuhYInlWexPxWl/9a24ZinC73QBYyy2BILr7rBSTe0j2LHs1aXxZxKZgUAJ6VQGRMEACijVXzQJyz+AIYxYcbA1MbwALZTIGULNbItoEpOgCASD4Pxdy1py3lddMAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA5LTEzVDAxOjUxOjU1LTA0OAws/fQ0wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wOS0xM1QwMTo1MTo1NS0wNDowMMKqaG8AAAAASUVORK5CYII=" data-toggle="tooltip" data-placement="top" title="{{ alumnus.name }} | {{ alumnus.batch }}" class="alumini_pics lazy" data-src="{{ alumnus.pic_path.url }}">
                                             </a>        
                                         </div>
                                         {% endfor %}
@@ -511,7 +516,7 @@
                                                 <a href="mailto:si.akgec14@gmail.com">si.akgec14@gmail.com</a> -->
                                             </p>
                                             <p>
-                                                <span style="color: #0094ff;">Software Incubator - SDC Lab<br/>
+                                                <span style="color: #0094ff;">Programming Club - SDC Lab<br/>
                                                     Ajay Kumar Garg Engineering College,<br/>
                                                     27th Km milestone NH-24 Delhi-Hapur Bypass,<br/>
                                                     Adhyatmik Nagar Ghaziabad, Uttar Pradesh - 201009.</span>
@@ -634,7 +639,7 @@
                                                 <div class="col-md-4">
                                                     
                                                     <!-- Content -->
-                                                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Software Incubator</h5>
+                                                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Programming Club</h5>
                                                     <p>WE BELIEVE IN</p>
                                                     <p>Redefining Limitations</p>
                                                     <p>Innovating Insanely</p>
@@ -776,7 +781,7 @@
                                         
                                         <!-- Copyright -->
                                         <div class="footer-copyright text-center py-3">© {% now "Y" %} Copyright:
-                                            <a href="http://silive.in">Software Incubator</a>
+                                            <a href="http://silive.in">Programming Club</a>
                                         </div>
                                         <!-- Copyright -->
                                         
@@ -1007,11 +1012,23 @@
                                             }
                                         </script>
                                         <script type="application/ld+json">
-                                        {   "@context" : "http://schema.org",
-                                            "@type" : "Organization",
-                                            "name" : "Software Incubator",
-                                            "url" : "http://silive.in",
-                                            "logo": "http://silive.in/static/images/si_logo.jpg" }
+                                        {
+                                            "@context": "https://schema.org",
+                                            "@type": "Organization",
+                                            "name" : "Programming Club",
+                                            "url" : "http://silive.in/",
+                                            "logo": "https://silive.in/static/images/logo.png",
+                                            "image": "https://silive.in/static/images/logo.png",
+                                            "description": "We, at Programming Club, work together as a team to turn your dreams into reality. Our team constitutes of dedicated and determined members who work day & night to ensure 100% client satisfaction",
+                                            "address": {
+                                                "@type": "PostalAddress",
+                                                "streetAddress": "AKGEC",
+                                                "addressLocality": "Ghaziabad",
+                                                "addressRegion": "Uttar Pradesh",
+                                                "postalCode": "201009",
+                                                "addressCountry": "India"
+                                            }
+                                        }
                                         </script>
                                     </body>
                                     </html>
