@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Aditya Verma",
+    "batch": "2018",
+    "company": "Google",
+    "position": "Software Engineer",
+    "image": "/images/alumni/alumni1.jpg",
+    "testimonial": "My journey at Software Incubator laid the foundation for my career. The hands-on experience and mentorship I received were invaluable.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/aditya-verma",
+      "github": "https://github.com/adityaverma"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ritu Singh",
+    "batch": "2019",
+    "company": "Microsoft",
+    "position": "Frontend Developer",
+    "image": "/images/alumni/alumni2.jpg",
+    "testimonial": "Software Incubator gave me the opportunity to work on real-world projects and develop my skills. The community and support were amazing.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/ritu-singh",
+      "github": "https://github.com/ritusingh"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Karan Malhotra",
+    "batch": "2017",
+    "company": "Amazon",
+    "position": "Senior Software Engineer",
+    "image": "/images/alumni/alumni3.jpg",
+    "testimonial": "Being part of Software Incubator was a turning point in my career. The technical knowledge and leadership skills I gained were crucial for my growth.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/karan-malhotra",
+      "github": "https://github.com/karanmalhotra"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Anjali Desai",
+    "batch": "2020",
+    "company": "Adobe",
+    "position": "UI/UX Designer",
+    "image": "/images/alumni/alumni4.jpg",
+    "testimonial": "Software Incubator provided me with a platform to explore my creativity and technical skills. The projects I worked on helped me build a strong portfolio.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/anjali-desai",
+      "behance": "https://behance.net/anjalidesai"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Vivek Joshi",
+    "batch": "2016",
+    "company": "Netflix",
+    "position": "Full Stack Developer",
+    "image": "/images/alumni/alumni5.jpg",
+    "testimonial": "The experience I gained at Software Incubator was instrumental in shaping my career. The collaborative environment and challenging projects prepared me for the industry.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/vivek-joshi",
+      "github": "https://github.com/vivekjoshi"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Meera Kapoor",
+    "batch": "2018",
+    "company": "Facebook",
+    "position": "Product Manager",
+    "image": "/images/alumni/alumni6.jpg",
+    "testimonial": "Software Incubator helped me discover my passion for product management. The technical knowledge combined with leadership opportunities set me up for success.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/meera-kapoor",
+      "twitter": "https://twitter.com/meerakapoor"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Rohit Sharma",
+    "batch": "2019",
+    "company": "Uber",
+    "position": "Backend Engineer",
+    "image": "/images/alumni/alumni7.jpg",
+    "testimonial": "The mentorship and technical guidance I received at Software Incubator were exceptional. It helped me build a strong foundation in backend development.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/rohit-sharma",
+      "github": "https://github.com/rohitsharma"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Pooja Mehta",
+    "batch": "2017",
+    "company": "Twitter",
+    "position": "Machine Learning Engineer",
+    "image": "/images/alumni/alumni8.jpg",
+    "testimonial": "Software Incubator introduced me to the world of machine learning and data science. The projects and workshops were instrumental in my career development.",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/pooja-mehta",
+      "github": "https://github.com/poojamehta"
+    }
+  }
+] 

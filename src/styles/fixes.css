@@ -1,0 +1,60 @@
+/* Fix for loader */
+#loader {
+  display: none !important;
+}
+
+/* Fix for header visibility */
+header {
+  position: relative;
+  z-index: 10001;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for logo visibility */
+.logo-container {
+  display: block;
+  position: relative;
+  z-index: 10001;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.logo-container img {
+  max-height: 60px;
+}
+
+/* Fix for navigation menu */
+.open {
+  z-index: 10002 !important;
+}
+
+.sub-menu {
+  z-index: 10003 !important;
+}
+
+.register_button {
+  z-index: 10002 !important;
+}
+
+/* Fix for main content */
+main {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+}
+
+/* Fix for sections */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for footer */
+.page-footer {
+  position: relative;
+  z-index: 1;
+  background-color: #1672cc;
+} 

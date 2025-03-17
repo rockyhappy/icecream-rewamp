@@ -1,0 +1,1001 @@
+{% load static %}
+{% load recaptcha2 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'images/silogo.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Registration Page</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">   
+    <!-- Google FOnt -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700"
+    rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0963438a4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{% static 'css/stylesheet_register.css' %}" rel="stylesheet">
+   
+   
+    <style>
+        .page-footer {
+            background: #1d1d1de7 url("{% static 'images/footer.svg' %}") repeat;
+        }
+        /* .long_text_label_link{
+            width: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        } */
+        @media only screen and (max-width:410px){
+            .validationerror{
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--HTML-->
+    <!-- Image and text -->
+    <div class="topnav">
+        <img src="{% static 'images/silogo-back.png' %}" alt="">
+        <a style="font-weight:700;" class="active" href="{% url 'home' %}">Home</a>
+    </div>
+    <div class="container-fluid" id="main_container">
+        <!-- <button type="button" class="portfolio_button" data-toggle="modal" data-target="#centralModalLg">Take a look</button> -->
+        <!-- Central Modal Large -->
+        {% if messages %}
+        <div class="modal fade show" id="centralModalLg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display:block;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <h3 class="text-center modal-title w-100" id="myModalLabel">
+                            <strong style="color: green">Thank You!</strong>
+                        </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">x</span>
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="container">
+                            <!-- Card deck -->
+                            <div class="text-center row">
+                                <h4 class="text-center  w-100">
+                                    {% for message in messages %}
+                                    <span style="color: green">{{ message }}</span>
+                                    {% endfor %}
+                                    <hr><span style="color: #0094ff"> Your registration is successful</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        {% endif %}
+        
+        <div class="container-fluid mx-auto mt-lg-5" id="second_container">
+            <div class="row mb-4">
+                <div class="col-lg-4 col-12 poster_image "> <!--poster_image large and med screen-->
+                    <img class="card-img z-depth-2" src="{{ event.pic_path.url }}" alt="{{ event.name }}">
+                </div>
+                <div class="col-lg-8 col-12 student_details z-depth-1"> <!--inputs_values-->
+                    <!-- <div class="row">
+                        <div class=" col-12 poster_image_small d-lg-none d-sm-block d-md-none mx-auto">
+                            <img class="img-fluid z-depth-1 " src="{{ event.pic_path.url }}" alt="poster banner image">
+                        </div>
+                    </div> -->
+                    <!-- Material form register -->
+                    <p class="h4 text-center my-4 mb-4 blue-text register_text" style="font-weight:700">REGISTER</p>
+                    <div class="container">
+                        <form name="form" id="contact-form" method="POST">
+                            {% csrf_token %}
+                            <!-- name -->
+                            <div id="register-form" name="form" class="md-form mb-0">
+                                <i class="fa-solid fa-user prefix grey-text"></i>
+                                <input type="text" id="Name" name="name" class="form-control">
+                                <label for="Name">Name</label>
+                                <span id="name_err" class='validationerror'>Invalid Name </span>
+                            </div>
+                            <!-- student number -->
+                            <div class="md-form">
+                                <i class="fa fa-id-badge prefix grey-text"></i>
+                                <input type="text" id="Student" name="student_number" class="form-control">
+                                <label for="Student">Student Number</label>
+                                <span id="studentno_err" class='validationerror'>Invalid Student Number </span>
+                                <span style="color: red" class='validationerror'>{{ form.student_number.errors }}</span>
+                            </div>
+                            <!-- email -->
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="email" id="Email" name="college_email" class="form-control">
+                                <label for="Email">College Email</label>
+                                <span id="email_err" class='validationerror'>Invalid Email </span>
+                                <span style="color: red" class='validationerror'>{{ form.college_email.errors }}</span>
+                            </div>
+                            <!-- Phone -->
+                            <div class="md-form">
+
+                                <i class="fas fa-phone prefix grey-text fa-rotate-90"></i>
+                                <input type="text" id="Phone" name="phone" class="form-control">
+                                <label for="Phone">Phone Number</label>
+                                <span id="phone_err" class='validationerror'>Invalid Phone Number </span>
+                                <span style="color: red" class='validationerror'>{{ form.phone.errors }}</span>
+                            </div>
+                            <!-- whatsapp -->
+                            <!-- <div class="md-form">
+                                <i class="fab fa-whatsapp prefix grey-text"></i>
+                                <input type="text" id="whatsapp" name="whatsapp" class="form-control">
+                                <label for="whatsapp">Whatsapp Number</label>
+                                <span id="whatsapp_err" class='validationerror'>Invalid whatsapp Number </span>
+                                <span style="color: red" class='validationerror'>{{ form.whatsapp.errors }}</span>
+                            </div> -->
+                            <!-- Roll no. -->
+                            <div class="md-form">
+                                <i class="far fa-id-card prefix grey-text"></i>
+                                <input type="text" id="Roll_no" name="roll_no" class="form-control">
+                                <label for="Roll_no">Roll no.</label>
+                                <span id="roll_no_err" class='validationerror'>Invalid Roll Number </span>
+                                <span style="color: red" class='validationerror'>{{ form.roll_no.errors }}</span>
+                            </div>
+                            <!-- Skills -->
+                             <div class="md-form">
+                                <i class="fa-solid fa-code prefix grey-text"></i>
+                                <input type="text" id="skills" name="skills" class="form-control">
+                                <label for="skills">Skills: HTML, CSS, Java...</label>
+                                <span id="skills_err" class='validationerror'>This field is required</span>
+                                <span style="color: red" class='validationerror'>{{ form.skills.errors }}</span>
+                            </div>
+                            <div class="md-form">
+                            
+                            <!--branch, year-->
+                            
+                                <div class='row p-1'>
+                                    <!--choose gender-->
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 ">
+                                        {{ form.gender.label }}
+                                        <div class="hoverable">{{ form.gender }}</div>
+                                        <span style="color: red" class='validationerror'>{{ form.gender.errors }}</span>
+                                    </div>
+                                    <!-- choose Branch -->
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 ">
+                                        {{ form.branch.label }}
+                                        <div class="hoverable">{{ form.branch }}</div>
+                                        <span style="color: red" class='validationerror'>{{ form.branch.errors }}</span>
+                                    </div>
+                                    <!--choose year-->
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 ">
+                                        {{ form.year.label }}
+                                        <div class="hoverable">{{ form.year }}</div>
+                                        {% comment %} <input type="text" style="display: block; margin-top: 12px;" value="2nd Year" disabled> {% endcomment %}
+                                        <span id="year_err" class='validationerror'>Invalid Year </span>
+                                        <span style="color: red" class='validationerror'>{ form.year.errors }}</span>
+                                    </div>
+                                    
+                                    <!--choose experience-->
+                                    <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 ">
+                                        {{ form.experience.label }}
+                                        <div class="hoverable">{{ form.experience }}</div>
+                                        <span style="color: red" class='validationerror'>{{ form.experience.errors }}</span>
+                                    </div>  -->
+                                </div>
+
+                                <div class="row p-1">
+                                    
+                                    <!-- choose Hosteler -->
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 " >
+                                        {{ form.is_hosteler.label }}
+                                        <div class="hoverable" >{{ form.is_hosteler }}</div>
+                                        <span style="color: red" class='validationerror'>{{ form.is_hosteler.errors }}</span>
+                                    </div>
+                                    <!--choose domain-->
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-1 ">
+                                        {{ form.domain.label }}
+                                        <div class="hoverable">{{ form.domain }}</div>
+                                        <span style="color: red" class='validationerror'>{{ form.domain.errors }}</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- HackerRank Username -->
+                            <div class="md-form" id='hackerrank'>
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <input type="text" id="hacker_rank_username" name="hacker_rank_username" class="form-control">
+                                <label for="hacker_rank_username">HackerRank Username</label>
+                                <span id="hacker_rank_username_err" class='validationerror'>Invalid Username</span>
+                                <span style="color: red" class='validationerror'>{{ form.hacker_rank_username.errors }}</span>
+                            </div> 
+                            
+                            <!-- HackerRank Username -->
+                            <!-- <div class="md-form" id='hackerrank'>
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <input type="text" id="github_username" name="github_username" class="form-control">
+                                <label for="github_username">HackerRank Username</label>
+                                <span id="github_username_err" class='validationerror'>Invalid Username</span>
+                                <span style="color: red" class='validationerror'>{{ form.github_username.errors }}</span>
+                            </div> -->
+                            
+                            <!-- GitHub Username -->
+                            <div class="md-form" id='github'>
+                                <i class="fa-brands fa-github prefix grey-text"></i>
+                                <input type="text" id="github_username" name="github_username" class="form-control">
+                                <label for="github_username">Github Username</label>
+                                <span id="github_username_err" class='validationerror'>Invalid Username</span>
+                                <span style="color: red" class='validationerror'>{{ form.github_username.errors }}</span>
+                            </div>
+                            
+                            <!-- Behance Username -->
+                            {% comment %} <div class="md-form" id='behance'>
+                                <i class="fa-brands fa-square-behance prefix grey-text"></i>
+                                <input type="text" id="behance_username" name="behance_username" class="form-control">
+                                <label for="behance_username">Behance Username</label>
+                                <span id="behance_username_err" class='validationerror'>Invalid Username</span>
+                                <span style="color: red" class='validationerror'>{{ form.behance_username.errors }}</span>
+                            </div> {% endcomment %}
+                            
+                            <!-- Your works -->
+                            <div class="md-form">
+                                <i class="fa-solid fa-link prefix grey-text"></i>
+                                <input type="text" id="your_work" name="your_work" class="form-control">
+                                <label class="long_text_label_link" for="your_work">Link to Your work or coding profiles (if any)</label>
+                                <span id="your_work_err" class='validationerror'>Invalid Links</span>
+                                <span style="color: red" class='validationerror'>{{ form.your_work.errors }}</span>
+                            </div> 
+                            
+                          <!-- Captcha -->
+                             <center>
+                                <div class="col-md-12" style="overflow: hidden;">
+                                    {{ form.captcha }}
+                                    <span id="captcha_err" style="color: red">{{ form.captcha.errors }}</span>
+                                </div>
+                            </center> 
+                            <!--button-->
+                            <center style="color: red" id="already_exit">{{ alert }}</center>
+                            <div class="text-center text-danger" id="status"></div>
+                            <div class="text-center py-4">
+                                <a class="btn btn-primary" onclick="validateForm()">Submit<i class="fa fa-paper-plane-o ml-2"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Material form register -->
+                </div>
+            </div> 
+        </div>
+    </div>
+    <!-- Footer  -->
+    <footer class="page-footer font-small pt-4">
+        
+        <!-- Footer Links -->
+        <div class="footer-container container text-center text-md-left">
+            
+            <!-- Grid row -->
+            <div class="row">
+                
+                <!-- Grid column -->
+                <div class="col-md-4">
+                    
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Software Incubator</h5>
+                    <p>WE BELIEVE IN</p>
+                    <p>Redefining Limitations</p>
+                    <p>Innovating Insanely</p>
+                    <p>Learning Technologies</p>
+                    <p>Sharing Intelligence</p>
+                    
+                </div>
+                <!-- Grid column -->
+                
+                <hr class="clearfix w-100 d-md-none">
+                
+                <!-- Grid column -->
+                <div class="col-sm-4 col-md-2 mx-auto">
+                    
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Featured Websites</h5>
+                    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a target="_blank" href="https://akgec.ac.in/">AKGEC</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://scrollsakgec.in/">Scrolls</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://bytepad.silive.in/">Bytepad</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://resume.silive.in/">Resume Builder</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://akgec.ac.in/bdc">Blood Donation Camp</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <!-- Grid column -->
+                
+                <!-- Grid column -->
+                <div class="col-sm-4 col-md-2 mx-auto">
+                    
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Services</h5>
+                    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a style="cursor: default;">Mobile Development</a>
+                        </li>
+                        <li>
+                            <a style="cursor: default;" >Website Development</a>
+                        </li>
+                        <li>
+                            <a style="cursor: default;" >Desktop Development</a>
+                        </li>
+                        <li>
+                            <a style="cursor: default;" >Web And Graphic Designing</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <!-- Grid column -->
+                
+                <!-- Grid column -->
+                <div class="col-sm-4 col-md-2 mx-auto">
+                    
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Clients</h5>
+                    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a target="_blank" href="https://akgec.ac.in/">AKGEC</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://4thpointer.com/">4th Pointer</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://india.ni.com/">National Instrument</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.akgecskills.in/">TIFAC</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.akgec-kuka.org/akgec.aspx">KUKA</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.akgec-bosch.org/">Rexroth</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.nbaind.org/views/Home.aspx#sthash.rtirIcbx.dpbs">NBA</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://gmaindia.org/">GMA</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.brainsoftsoftware.com/">Brain Soft</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <!-- Grid column -->
+                
+            </div>
+            <!-- Grid row -->
+            
+        </div>
+        <!-- Footer Links -->
+        
+        <hr>
+        
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a target="_blank" href="https://facebook.com/RedefiningLimitations" class="btn-floating btn-fb mx-1">
+                    <i class="fa fa-facebook"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="https://twitter.com/si_akgec" class="btn-floating btn-tw mx-1">
+                    <i class="fa fa-twitter"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="https://github.com/Software-Incubator" class="btn-floating btn-gplus mx-1">
+                    <i class="fa fa-github"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a target="_blank" href="https://youtube.com/channel/UCamqzGM8e8nzsdi1bsoyaKw" class="btn-floating btn-li mx-1">
+                    <i class="fa fa-youtube-play"> </i>
+                </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+        
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© {% now "Y" %} Copyright:
+            <a href="http://silive.in">Software Incubator</a>
+        </div>
+        <!-- Copyright -->
+        
+    </footer>
+    <!-- Footer -->   
+</div>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+<!-- User js -->
+
+<script>
+    var studentno_regex = "^((23)(((11|12|14|10|13|00|31|21|32|40|153|154|164|169)[0-9][0-9][0-9])|((154|153|164)[0-9][0-9])))|((2[12])(((11|12|14|10|13|00|31|21|32|40|153|154|164|169)[0-9][0-9][0-9])|((154|153|164)[0-9][0-9]))(-{0,1})[mMdDlL])$"
+    var email_regex = "^[a-zA-Z]+(((23)(((11|12|14|10|13|00|31|21|32|40|153|154|164|169|x{3}|X{3})[0-9][0-9][0-9])|((154|153|164)[0-9][0-9])))|((2[12])(((11|12|14|10|13|00|31|21|32|40|153|154|164|169|x{3}|X{3})[0-9][0-9][0-9])|((154|153|164)[0-9][0-9]))(-{0,1})[mMdDlL]))(@akgec.ac.in)$"
+
+    function isValidHttpUrl(string) {
+
+            var regex = new RegExp("^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$",'i');
+            console.log(regex.test(string));
+            return regex.test(string);
+    }
+    
+    $(document).ready(function () {
+        $(".validationerror").hide();
+        var test = $("#domain").val();
+        console.log(test);
+        if(test==1){
+            $('#behance').hide();
+            $('#github').show();}
+        else if(test==2){
+            $('#github').hide();
+            $('#behance').show();}
+        else{
+            $('#github').show();
+            $('#behance').show();
+        }
+
+            $("#domain").change(function(){
+            if(this.value==1){
+                $('#github').show();
+                $('#behance').hide();
+            }
+            else if(this.value==2){
+                $('#behance').show();
+                $('#github').hide();
+            }
+            else{
+                $('#github').show();
+                $('#behance').show();
+                $('#github_username').val('');
+                $('#behance_username').val('');
+            }
+        });
+        $("#Name").focusout(function (event) {
+            if (event.charCode!=0) {
+                if($(this).val()==''){
+                    document.getElementById('name_err').innerHTML = "Name can't be blank";
+                    $( "#name_err" ).show();
+                    return;
+                }
+                var regex = new RegExp("^[a-zA-Z]+[a-zA-Z ]*$");
+                if (!regex.test($(this).val())) {
+                    document.getElementById('name_err').innerHTML = "Invalid Name";
+                    $( "#name_err" ).show();
+                }
+            }
+        });
+        
+        $("#Name").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#name_err" ).hide();
+            }
+        });
+        
+        
+        $("#Phone").focusout(function (event) {
+            if (event.charCode!=0) {
+                if($(this).val()==''){
+                    document.getElementById('phone_err').innerHTML = "Phone can't be blank";
+                    $( "#phone_err" ).show();
+                    return;
+                }
+                var regex = new RegExp(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/);
+                if (!regex.test($("#Phone").val())) {
+                    document.getElementById('phone_err').innerHTML = "Invalid Contact Number";
+                    $( "#phone_err" ).show();
+                }
+            }
+        });      
+        $("#Phone").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#phone_err" ).hide();
+            }
+        });
+
+        $("#Phone").attr('maxlength','10');
+        
+        // $("#whatsapp").focusout(function (event) {
+        //     if (event.charCode!=0) {
+        //         if($(this).val()==''){
+        //             document.getElementById('whatsapp_err').innerHTML = "Whatsapp number can't be blank";
+        //             $( "#whatsapp_err" ).show();
+        //             return;
+        //         }
+        //         var regex = new RegExp(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/);
+        //         if (!regex.test($("#whatsapp").val())) {
+        //             document.getElementById('whatsapp_err').innerHTML = "Invalid Contact Number";
+        //             $( "#whatsapp_err" ).show();
+        //         }
+        //     }
+        // });      
+        // $("#whatsapp").focusin(function (event) {
+        //     if (event.charCode!=0) {
+        //         $( "#whatsapp_err" ).hide();
+        //     }
+        // });
+        // $("#whatsapp").attr('maxlength','10');
+
+        $("#Student").focusout(function (event) {
+            if (event.charCode!=0) {
+                if($(this).val()==''){
+                    document.getElementById('studentno_err').innerHTML = "Student Number can't be blank";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+                
+
+                var regex = new RegExp(studentno_regex);
+
+                if (!regex.test($("#Student").val())) {
+                    document.getElementById('studentno_err').innerHTML = "Invalid Student Number";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+
+                //Check if college email is empty
+                // if($("#Email").val()==''){
+                //     document.getElementById('email_err').innerHTML = "Email can't be blank";
+                //     $( "#email_err" ).show();
+                //     return;
+                // }
+
+                //student number and Email Id's student number Validation
+                if($("#Email").val()!=''){
+                    // Check if email is valid
+                    var regex = new RegExp(email_regex);
+                    if (!regex.test($("#Email").val())) {
+                        document.getElementById('email_err').innerHTML = "Invalid Email Id";
+                        $( "#email_err" ).show();
+                        return;
+                    }
+
+                    var email = $("#Email").val().toLowerCase()
+                    // var regex_exp = $("#Student").val()
+                    // var regex_exp_email = `^[a-zA-Z]+(${regex_exp})@(\akgec.ac.in)$`
+                    // console.log(regex_exp_email)
+                    var re = new RegExp(email_regex);
+                    // var re = new RegExp(`(${regex_exp})`)
+                    if (!re.test(email)) {
+                        document.getElementById('studentno_err').innerHTML = "Student Number doesn't match that of Email";
+                        $( "#studentno_err" ).show();
+                        return;
+                    }
+                }
+            }
+
+        });      
+
+        $("#Student").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#studentno_err" ).hide();
+            }
+        });
+
+        $("#Student").attr('maxlength','10');
+
+        $("#Email").focusout(function (event) {
+            if (event.charCode!=0) {
+                if($(this).val()==''){
+                    document.getElementById('email_err').innerHTML = "Email can't be blank";
+                    $( "#email_err" ).show();
+                    return;
+                }
+
+
+                var regex = new RegExp(email_regex);
+                
+                if (!regex.test($("#Email").val())) {
+                    document.getElementById('email_err').innerHTML = "Invalid Email Id";
+                    $( "#email_err" ).show();
+                    return;
+                }
+                
+                if($("#Student").val()==''){
+                    document.getElementById('studentno_err').innerHTML = "Student Number can't be blank";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+                
+
+                var regex = new RegExp(studentno_regex);
+
+
+                if (!regex.test($("#Student").val())) {
+                    document.getElementById('studentno_err').innerHTML = "Invalid Student Number";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+
+                //student number and Email Id's student number Validation
+                var email = $("#Email").val().toLowerCase()
+                
+                // var regex_exp = $("#Student").val()
+                // var regex_exp_email = `^[a-zA-Z]+(${regex_exp})@(\akgec.ac.in)$`
+                console.log(regex_exp_email)
+                var re = new RegExp(email_regex);
+                // var re = new RegExp(`(${regex_exp})`)
+                if (!re.test(email)) {
+                    document.getElementById('studentno_err').innerHTML = "Student Number doesn't match that of Email";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+            }
+        });
+        
+        $("#Email").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#email_err" ).hide();
+            }
+            if (event.charCode!=0) {
+                $( "#studentno_err" ).hide();
+            }
+        });
+
+        $("#Roll_no").focusout(function (event) {
+            if(event.charCode!=0) {
+                if($(this).val()==''){
+                    document.getElementById('roll_no_err').innerHTML = "Roll no. can't be blank";
+                    $( "#roll_no_err" ).show();
+                    return;
+                }
+                var regex = new RegExp(roll_no_regex);
+                if (!regex.test($("#Roll_no").val())) {
+                    document.getElementById('roll_no_err').innerHTML = "Invalid Roll Number";
+                    $( "#roll_no_err" ).show();
+                }
+            }
+        });
+        $("#Roll_no").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#roll_no_err" ).hide();
+            }
+        });
+        $("#Roll_no").attr('maxlength','13');
+
+        $("#skills").focusout(function (event) {
+            if (event.charCode!=0) {
+                if ($("#skills").val().trimEnd().trimStart() == '') {
+                    document.getElementById('skills_err').innerHTML = "This field is required";
+                    $( "#skills_err" ).show();
+                }
+            }
+        });
+        $("#skills").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#skills_err" ).hide();
+            }
+        });
+        $("#skills").attr('maxlength','245');        
+        
+
+        $("#github_username").focusout(function (event) {
+            if (event.charCode!=0) {
+                if ($("#github_username").val() == '') {
+                    // document.getElementById('github_username_err').innerHTML = "This field is required";
+                    // $( "#github_username_err" ).show();
+                    return;
+                }
+                var regex =  new RegExp("^_*[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$");
+                if (!regex.test($(this).val())) {
+                    document.getElementById('github_username_err').innerHTML = "This username is not valid";
+                    $( "#github_username_err" ).show();
+                }
+            }
+        });
+        $("#github_username").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#github_username_err" ).hide();
+            }
+        });
+        $('#github_username').attr('maxlength','100');
+
+        $("#behance_username").focusout(function (event) {
+            if (event.charCode!=0) {
+                if ($("#behance_username").val() == '') {
+                    // document.getElementById('behance_username_err').innerHTML = "This field is required";
+                    // $( "#behance_username_err" ).show();
+                    return;
+                }
+                var regex =  new RegExp("^([A-Za-z0-9\-\_])*$");
+                if (!regex.test($(this).val())) {
+                    document.getElementById('behance_username_err').innerHTML = "This username is not valid";
+                    $( "#behance_username_err" ).show();
+                }
+            }
+        });
+        $("#behance_username").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#behance_username_err" ).hide();
+            }
+        });
+        $('#behance_username').attr('maxlength','100');
+
+
+        
+        $("#your_work").focusout(function (event) {
+            if (event.charCode!=0) {
+                if ($("#your_work").val() != '') {
+                    handles = $("#your_work").val().split(",");
+                    for(var i=0;i<handles.length;i++){
+                        h = handles[i].trimEnd();
+                        h = h.trimStart();
+                        if(!(isValidHttpUrl(h))){
+                            document.getElementById('your_work_err').innerHTML = h + " is not a valid URL";
+                            $( "#your_work_err" ).show();
+                        }
+                    }
+                }
+            }
+        });
+        $("#your_work").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#your_work_err" ).hide();
+            }
+        });
+        $("#your_work").attr('maxlength','1000');
+
+        $("#Branch").focusout(function (event) {
+            //Check if student number is blank
+            if($("#Student").val()==''){
+                    document.getElementById('studentno_err').innerHTML = "Student Number can't be blank";
+                    $( "#studentno_err" ).show();
+                    return;
+                }
+            // console.log(event.target.value) // fetching the branch code
+            regex_exp = `^(${event.target.value})`
+            var re = new RegExp(regex_exp)
+            console.log($("#Student").val().slice(2, 5))
+            //fetching the branch code from student number
+            if (!re.test($("#Student").val().slice(2, 5))) {
+                    document.getElementById('studentno_err').innerHTML = "Branch Code doesn't match Student Number";
+                    $( "#studentno_err" ).show();
+                }
+        
+        $("#Branch").focusin(function (event) {
+            if (event.charCode!=0) {
+                $( "#studentno_err" ).hide();
+            }
+        });
+        $("#Branch").attr('maxlength','1000');
+        }); 
+    });
+    
+</script>
+
+<script>
+    var studentno_regex = "^((23)(((11|12|14|10|13|00|31|21|32|40|153|154|164|169)[0-9][0-9][0-9])|((154|153|164)[0-9][0-9])))|((2[12])(((11|12|14|10|13|00|31|21|32|40|153|154|164|169)[0-9][0-9][0-9])|((154|153|164)[0-9][0-9]))(-{0,1})[mMdDlL])$"
+    var email_regex = "^[a-zA-Z]+(((23)(((11|12|14|10|13|00|31|21|32|40|153|154|164|169|x{3}|X{3})[0-9][0-9][0-9])|((154|153|164)[0-9][0-9])))|((2[12])(((11|12|14|10|13|00|31|21|32|40|153|154|164|169|x{3}|X{3})[0-9][0-9][0-9])|((154|153|164)[0-9][0-9]))(-{0,1})[mMdDlL]))(@akgec.ac.in)$"
+
+    function isValidHttpUrl(string) {
+
+            var regex = new RegExp("^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$","i");
+            console.log(regex.test(string));
+            return regex.test(string);
+    }
+    function validateForm(){
+        // Name validation
+
+        var name =  document.getElementById('Name').value;
+        if (name == "") {
+            document.getElementById('name_err').innerHTML = "Name cannot be empty";
+            document.getElementById('name_err').style.display = "block";
+            return false;
+        }else{
+            var re = new RegExp("^[a-zA-Z]+[a-zA-Z ]*$");
+            if(!re.test(name)){
+                document.getElementById('name_err').innerHTML = "Name is not valid";
+                document.getElementById('name_err').style.display = "block";
+                return false;
+            }
+        }
+
+        // College Email Validation
+        var email =  document.getElementById('Email').value;
+        if (email == "") {
+            document.getElementById('email_err').innerHTML = "Email cannot be empty";
+            document.getElementById('email_err').style.display = "block";
+            return false;
+        }else {
+
+
+            var re= new RegExp(email_regex)
+
+            if(!re.test(email)){
+                document.getElementById('email_err').innerHTML = "Email is not valid";
+                document.getElementById('email_err').style.display = "block";
+                return false;
+            }
+        }
+
+        // student number validation
+        var student_no =  document.getElementById('Student').value;
+        if (student_no == "") {
+            document.getElementById('studentno_err').innerHTML = "Student number cannot be empty";
+            document.getElementById('studentno_err').style.display = "block";
+            return false;
+        }else {
+            
+            
+            // First year registrations
+            
+            regex_string = "^(23)(00|10|1[123]|15[34]|16[49]|021|31|40|21)([0-9]{3})$";
+
+            var re = new RegExp(studentno_regex);
+            if(!re.test(student_no)){
+                document.getElementById('studentno_err').innerHTML = "Student number is not valid";
+                document.getElementById('studentno_err').style.display = "block";
+
+                return false;
+            }
+        }
+
+        // branch code validation
+        var branch_code = document.getElementById('Branch').value;
+        if (branch_code != ""){
+            regex_exp = `^(${branch_code})`
+            var re = new RegExp(regex_exp)
+            if (!re.test(student_no.slice(2, 5))) {
+                    document.getElementById('studentno_err').innerHTML = "Branch Code doesn't match Student Number";
+                    $( "#studentno_err" ).show();
+                    return false;
+                }
+        }
+
+        // Roll no. validation
+        var roll_no =  document.getElementById('Roll_no').value;
+        if (roll_no == "") {
+            document.getElementById('roll_no_err').innerHTML = "Roll number cannot be empty";
+            document.getElementById('roll_no_err').style.display = "block";
+            return false;
+        }else {
+        var roll_no_regex = "^(23)(0027)(000|01[0123]|15[34]|16[49]|031|040|021)([0-9]{4})$"
+
+        var re = new RegExp(roll_no_regex);
+            if(!re.test(roll_no)){
+                document.getElementById('roll_no_err').innerHTML = "Roll number is not valid";
+                document.getElementById('roll_no_err').style.display = "block";
+
+                return false;
+            }
+        }
+
+        // Phone number validation
+        var phone = document.getElementById('Phone').value;
+        if (phone == "") {
+            document.getElementById('phone_err').innerHTML = "Phone cannot be empty";
+            document.getElementById('phone_err').style.display = "block";
+
+            return false;
+        }else{
+                var re = new RegExp(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/);
+                if(!re.test(phone)){
+                    document.getElementById('phone_err').innerHTML = "Phone number is not valid";
+                    document.getElementById('phone_err').style.display = "block";
+                    return false;
+                }
+        }
+
+        // Whatsapp number validation
+        // var whatsapp = document.getElementById('whatsapp').value;
+        // if (whatsapp == "") {
+        //     document.getElementById('whatsapp_err').innerHTML = "Whatsapp number cannot be empty";
+        //     document.getElementById('whatsapp_err').style.display = "block";
+        //     return false;
+        // }else{
+        //         var re = new RegExp(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/);
+        //         if(!re.test(whatsapp)){
+        //             document.getElementById('whatsapp_err').innerHTML = "whatsapp number is not valid";
+        //             document.getElementById('whatsapp_err').style.display = "block";
+        //             return false;
+        //         }
+        // }
+
+        // Skills Validation
+        // var skills= document.getElementById('skills').value.trimEnd().trimStart();
+//         if (skills == "") {
+//             document.getElementById('skills_err').innerHTML = "This field can't be empty";
+//             document.getElementById('skills_err').style.display = "block";
+//             return false;
+//         }
+//         // HackerRank Username Validation
+//         var github_username = document.getElementById('github_username').value;
+//         var domain = document.getElementById('domain').value;
+      
+//         if(domain!=2){
+//             if (github_username == "") {
+//                 document.getElementById('github_username_err').innerHTML = "This field can't be empty";
+//                 document.getElementById('github_username_err').style.display = "block";
+//                 return false;
+//             }else{
+//                 var regex =  new RegExp("^_*[a-zA-Z\\d]+[a-zA-z0-9]*$");
+//                 if (!regex.test(github_username)) {
+//                     document.getElementById('github_username_err').innerHTML = "This username is not valid";
+//                     document.getElementById('github_username_err').style.display = "block";
+//                     return false;
+//                 }
+//             }
+//         }
+        
+        // Your work links Validation
+        // var your_work= document.getElementById('your_work').value;
+        // if (your_work != ""){
+        //     handles = your_work.split(",");
+        //     for(var i=0;i<handles.length;i++){
+        //         h = handles[i].trimEnd();
+        //         h = h.trimStart();
+        //         if(!(isValidHttpUrl(h))){
+        //             document.getElementById('your_work_err').innerHTML = h + " is not a valid URL";
+        //             document.getElementById('your_work_err').style.display = "block";
+        //             return false;
+        //         }
+        //     }
+        // }else{
+        //     document.getElementById('your_work_err').innerHTML = "This field can't be empty";
+        //     document.getElementById('your_work_err').style.display = "block";
+        //     return false;
+        // }
+
+        // Captcha Validation
+       var v = grecaptcha.getResponse();
+       console.log(v);
+       if(v.length === 0)
+       {
+           document.getElementById('captcha_err').innerHTML="You can't leave Captcha Code empty";
+           document.getElementById('captcha_err').style.display = "block";
+           return false;
+        }
+
+        console.log("hi")
+        document.getElementById('already_exit').innerHTML = "Sending...";
+        document.getElementById('already_exit').style.color = "green";
+        document.getElementById('contact-form').submit();
+    }
+</script>
+
+{% if messages %}
+<script>
+    $(document).ready(function () {
+        setTimeout(function() {
+            document.getElementById('centralModalLg').style.display = "none";
+            document.getElementById('already_exit').style.color = "red";
+        }, 4000);
+    });
+</script>
+{% endif %}
+</body>
+
+</html>

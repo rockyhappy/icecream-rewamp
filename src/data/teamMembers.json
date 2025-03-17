@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "position": "President",
+    "image": "/images/team/member1.jpg",
+    "bio": "Rahul is a full-stack developer with expertise in React, Node.js, and MongoDB. He has been leading the Software Incubator for 2 years.",
+    "skills": ["React", "Node.js", "MongoDB", "AWS"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/rahul-sharma",
+      "github": "https://github.com/rahulsharma",
+      "twitter": "https://twitter.com/rahulsharma"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Priya Patel",
+    "position": "Vice President",
+    "image": "/images/team/member2.jpg",
+    "bio": "Priya specializes in UI/UX design and front-end development. She has worked on multiple projects and mentored junior members.",
+    "skills": ["UI/UX Design", "React", "Figma", "CSS/SASS"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/priya-patel",
+      "github": "https://github.com/priyapatel",
+      "behance": "https://behance.net/priyapatel"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Amit Kumar",
+    "position": "Technical Lead",
+    "image": "/images/team/member3.jpg",
+    "bio": "Amit is an expert in backend development and cloud infrastructure. He has implemented several scalable solutions for the team.",
+    "skills": ["Python", "Django", "AWS", "Docker"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/amit-kumar",
+      "github": "https://github.com/amitkumar",
+      "medium": "https://medium.com/@amitkumar"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Neha Gupta",
+    "position": "Machine Learning Lead",
+    "image": "/images/team/member4.jpg",
+    "bio": "Neha leads the machine learning initiatives at Software Incubator. She has experience in developing ML models for various applications.",
+    "skills": ["Python", "TensorFlow", "PyTorch", "Data Analysis"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/neha-gupta",
+      "github": "https://github.com/nehagupta",
+      "kaggle": "https://kaggle.com/nehagupta"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "position": "Mobile Development Lead",
+    "image": "/images/team/member5.jpg",
+    "bio": "Vikram specializes in mobile app development using React Native and Flutter. He has published several apps on Play Store and App Store.",
+    "skills": ["React Native", "Flutter", "Firebase", "App Development"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/vikram-singh",
+      "github": "https://github.com/vikramsingh",
+      "twitter": "https://twitter.com/vikramsingh"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Ananya Verma",
+    "position": "Web Development Lead",
+    "image": "/images/team/member6.jpg",
+    "bio": "Ananya is an expert in modern web development technologies. She has led multiple web projects and conducted workshops for students.",
+    "skills": ["JavaScript", "React", "Vue.js", "GraphQL"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/ananya-verma",
+      "github": "https://github.com/ananyaverma",
+      "codepen": "https://codepen.io/ananyaverma"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Rajesh Mishra",
+    "position": "DevOps Engineer",
+    "image": "/images/team/member7.jpg",
+    "bio": "Rajesh manages the CI/CD pipelines and infrastructure for all projects. He ensures smooth deployment and operation of applications.",
+    "skills": ["Docker", "Kubernetes", "Jenkins", "AWS"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/rajesh-mishra",
+      "github": "https://github.com/rajeshmishra",
+      "medium": "https://medium.com/@rajeshmishra"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Sneha Joshi",
+    "position": "Content Manager",
+    "image": "/images/team/member8.jpg",
+    "bio": "Sneha handles all content creation and management for the website and social media. She also organizes events and workshops.",
+    "skills": ["Content Writing", "Social Media", "Event Management", "SEO"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/sneha-joshi",
+      "twitter": "https://twitter.com/snehajoshi",
+      "instagram": "https://instagram.com/snehajoshi"
+    }
+  }
+] 

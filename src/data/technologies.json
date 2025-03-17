@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Python",
+    "image": "/images/python.png",
+    "category": "Programming Language",
+    "description": "A versatile programming language used for web development, data analysis, artificial intelligence, and more."
+  },
+  {
+    "id": 2,
+    "name": "Java",
+    "image": "/images/java.png",
+    "category": "Programming Language",
+    "description": "A popular programming language used for enterprise applications, Android development, and more."
+  },
+  {
+    "id": 3,
+    "name": "JavaScript",
+    "image": "/images/js.png",
+    "category": "Programming Language",
+    "description": "The language of the web, used for creating interactive websites and web applications."
+  },
+  {
+    "id": 4,
+    "name": "Node.js",
+    "image": "/images/node-js.png",
+    "category": "Runtime Environment",
+    "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine, used for server-side programming."
+  },
+  {
+    "id": 5,
+    "name": "Android",
+    "image": "/images/android.png",
+    "category": "Mobile Platform",
+    "description": "The world's most popular mobile operating system, used on billions of devices."
+  },
+  {
+    "id": 6,
+    "name": "iOS",
+    "image": "/images/ios.png",
+    "category": "Mobile Platform",
+    "description": "Apple's mobile operating system, known for its security and user experience."
+  },
+  {
+    "id": 7,
+    "name": "React",
+    "image": "/images/react.png",
+    "category": "Frontend Framework",
+    "description": "A JavaScript library for building user interfaces, particularly single-page applications."
+  },
+  {
+    "id": 8,
+    "name": "Angular",
+    "image": "/images/angular.png",
+    "category": "Frontend Framework",
+    "description": "A platform and framework for building single-page client applications using HTML and TypeScript."
+  },
+  {
+    "id": 9,
+    "name": "Vue.js",
+    "image": "/images/vue.png",
+    "category": "Frontend Framework",
+    "description": "A progressive JavaScript framework for building user interfaces and single-page applications."
+  },
+  {
+    "id": 10,
+    "name": "Django",
+    "image": "/images/django.png",
+    "category": "Backend Framework",
+    "description": "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
+  },
+  {
+    "id": 11,
+    "name": "Flask",
+    "image": "/images/flask.png",
+    "category": "Backend Framework",
+    "description": "A lightweight WSGI web application framework in Python, designed to make getting started quick and easy."
+  },
+  {
+    "id": 12,
+    "name": "Express",
+    "image": "/images/express.png",
+    "category": "Backend Framework",
+    "description": "A minimal and flexible Node.js web application framework that provides a robust set of features."
+  }
+] 

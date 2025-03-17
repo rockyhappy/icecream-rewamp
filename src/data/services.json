@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Web Development",
+    "description": "We create responsive and dynamic websites using the latest technologies. Our web development services include front-end development, back-end development, and full-stack solutions.",
+    "image": "/images/service-web.svg",
+    "technologies": ["React", "Next.js", "Node.js", "Express", "MongoDB", "PostgreSQL"],
+    "features": [
+      "Responsive design for all devices",
+      "Modern UI/UX implementation",
+      "SEO optimization",
+      "Performance optimization",
+      "API integration",
+      "Database design and implementation"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mobile Development",
+    "description": "We build native and cross-platform mobile applications for iOS and Android. Our mobile development services focus on creating user-friendly and high-performance apps.",
+    "image": "/images/service-mob.svg",
+    "technologies": ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
+    "features": [
+      "Cross-platform development",
+      "Native app development",
+      "UI/UX design for mobile",
+      "Push notifications",
+      "Offline functionality",
+      "App store deployment"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Machine Learning",
+    "description": "We implement machine learning solutions for various business problems. Our machine learning services help organizations leverage data to make better decisions.",
+    "image": "/images/service-ml.svg",
+    "technologies": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"],
+    "features": [
+      "Data analysis and preprocessing",
+      "Model development and training",
+      "Natural language processing",
+      "Computer vision",
+      "Predictive analytics",
+      "Model deployment and monitoring"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Cloud Computing",
+    "description": "We provide cloud computing solutions to help businesses scale their applications and infrastructure. Our cloud services ensure reliability, security, and performance.",
+    "image": "/images/service-cc.svg",
+    "technologies": ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
+    "features": [
+      "Cloud migration",
+      "Infrastructure as Code",
+      "Serverless architecture",
+      "Microservices implementation",
+      "DevOps automation",
+      "Monitoring and logging"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "UI/UX Design",
+    "description": "We design intuitive and engaging user interfaces and experiences. Our UI/UX design services focus on creating designs that are both aesthetically pleasing and functional.",
+    "image": "/images/service-desk.svg",
+    "technologies": ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator"],
+    "features": [
+      "User research and personas",
+      "Wireframing and prototyping",
+      "Visual design",
+      "Interaction design",
+      "Usability testing",
+      "Design systems"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "DevOps",
+    "description": "We implement DevOps practices to streamline development and operations. Our DevOps services help organizations deliver software faster and more reliably.",
+    "image": "/images/service-os.svg",
+    "technologies": ["Jenkins", "GitLab CI/CD", "Docker", "Kubernetes", "Ansible", "Prometheus"],
+    "features": [
+      "Continuous Integration/Continuous Deployment",
+      "Infrastructure automation",
+      "Configuration management",
+      "Monitoring and logging",
+      "Security integration",
+      "Performance optimization"
+    ]
+  }
+] 
